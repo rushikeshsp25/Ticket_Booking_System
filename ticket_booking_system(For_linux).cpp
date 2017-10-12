@@ -2,6 +2,8 @@
 DEVELOPER: RUSHIKESH SANJAY PHALKE
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 #include<iostream>
+#include<cstdlib>
+#include<ctime>
 using namespace std;
 
 typedef struct node
@@ -25,7 +27,7 @@ void create()
 {
 node *nn,*cn;
 int j=1;
-volatile int k=2;
+int k=2;
 char c ='A';
 
 do
@@ -33,7 +35,8 @@ do
 int i=1;
 do
 {
-k=(k*k)/10+100-k/2;
+srand((int)time(0));
+k=rand()%10000+1;
 nn=new node();
 nn->next=nn->prev=NULL;
 nn->row_no=c;
